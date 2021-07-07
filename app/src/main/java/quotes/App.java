@@ -3,21 +3,26 @@
  */
 package quotes;
 
-import com.google.gson.Gson;
-import com.google.gson.stream.JsonReader;
-
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 
 public class App {
 
     public static void main(String[] args) throws IOException {
+        boolean success = false;
+        try{
+            QuoteAPI quoteAPI = new QuoteAPI();
+            quoteAPI.readApi();
+            success = true;
+        }catch (Exception e){
+            System.out.println("Something went wrong with API");
+        }
+        if (!success){
+            DeserializeQuote deserializeQuote = new DeserializeQuote();
+            deserializeQuote.Deserialize();
+        }
 
-        DeserializeQuote deserializeQuote = new DeserializeQuote();
-        deserializeQuote.Deserialize("C:\\Users\\yousef\\Desktop\\software development\\401 Java\\quotes\\app\\src\\main\\java\\quotes\\recentquotes.json");
+
+
     }
 
 }
