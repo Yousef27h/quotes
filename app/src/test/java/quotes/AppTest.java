@@ -15,6 +15,7 @@ class AppTest {
     @Test void authorTest() throws IOException {
         String path ="C:\\Users\\yousef\\Desktop\\software development\\401 Java\\quotes\\app\\src\\main\\java\\quotes\\recentquotes.json";
         DeserializeQuote deserializeQuote = new DeserializeQuote();
+        String path =
         assertNotNull(deserializeQuote.Deserialize(path)[0].author, "Marilyn Monroe");
     }
     // test quote return from our JSON file

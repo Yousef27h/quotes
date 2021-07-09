@@ -13,5 +13,8 @@ public class Quotes {
         this.text = text;
     }
 
-
+    @Override
+    public String toString() {
+        return text;
+    }
 }
